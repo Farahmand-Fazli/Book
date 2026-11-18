@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#172b2b">
+  <title>هدف‌گذاری در سرزمین خرابه‌ها | شکوهمند فضلی</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #243332;
+      --muted: #687775;
+      --deep: #172b2b;
+      --green: #52766b;
+      --gold: #c69b5b;
+      --paper: #fbf8f1;
+      --white: #fffefa;
+      --line: #e9e2d5;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #eae7df;
+      font-family: "Vazirmatn", Tahoma, sans-serif;
+      line-height: 2.15;
+    }
+    .book {
+      width: min(100% - 32px, 940px);
+      margin: 36px auto;
+      background: var(--paper);
+      box-shadow: 0 24px 80px rgba(25, 39, 36, .16);
+      overflow: hidden;
+      border-radius: 5px;
+    }
+    .cover {
+      min-height: 590px;
+      padding: 42px 9% 55px;
+      color: #f9f5eb;
+      background:
+        radial-gradient(ellipse at 15% 85%, rgba(198,155,91,.20), transparent 34%),
+        linear-gradient(145deg, rgba(23,43,43,.96), rgba(38,65,59,.97)),
+        var(--deep);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: space-between;
+      isolation: isolate;
+    }
+    .cover::before, .cover::after {
+      content: "";
+      position: absolute;
+      inset: 22px;
+      border: 1px solid rgba(220,190,139,.28);
+      pointer-events: none;
+      z-index: -1;
+    }
+    .cover::after {
+      inset: 31px;
+      border-color: rgba(220,190,139,.12);
+    }
+    .bismillah {
+      font-size: 17px;
+      color: #e4c995;
+      letter-spacing: .3px;
+      margin-top: 12px;
+    }
+    .cover-mark {
+      width: 74px; height: 74px;
+      border: 1px solid rgba(224,194,143,.65);
+      border-radius: 50%;
+      display: grid; place-items: center;
+      color: var(--gold);
+      font-size: 29px;
+      margin: 20px 0 25px;
+    }
+    .cover h1 {
+      font-size: clamp(34px, 6vw, 58px);
+      line-height: 1.55;
+      margin: 0;
+      font-weight: 800;
+      color: #fffaf0;
+    }
+    .subtitle {
+      max-width: 620px;
+      margin: 18px auto 0;
+      font-size: clamp(15px, 2.2vw, 19px);
+      line-height: 2.1;
+      color: #e2d9c8;
+      font-weight: 300;
+    }
+    .cover-rule {
+      width: 86px; height: 2px;
+      background: var(--gold);
+      margin: 27px auto;
+    }
+    .author {
+      color: #e4c995;
+      font-size: 19px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .cover-note {
+      color: rgba(249,245,235,.58);
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+    main { padding: 58px 10% 80px; }
+    .section-kicker {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      margin-bottom: 5px;
+    }
+    h2 {
+      font-size: 29px;
+      line-height: 1.6;
+      color: var(--deep);
+      margin: 0 0 23px;
+      font-weight: 800;
+    }
+    .intro p, .story p, .idea p {
+      font-size: 16px;
+      margin: 0 0 17px;
+      text-align: justify;
+    }
+    .opening-quote {
+      margin: 32px 0;
+      padding: 22px 25px;
+      background: #f1eee5;
+      border-right: 4px solid var(--gold);
+      color: #405650;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 2.1;
+      border-radius: 3px 0 0 3px;
+    }
+    .section-divider {
+      height: 1px;
+      background: var(--line);
+      margin: 50px 0;
+      position: relative;
+    }
+    .section-divider::after {
+      content: "✦";
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--paper);
+      color: var(--gold);
+      padding: 0 15px;
+    }
+    .chapter-label {
+      display: inline-block;
+      padding: 4px 14px;
+      color: #fff;
+      background: var(--green);
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .story-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 27px 30px;
+      box-shadow: 0 8px 24px rgba(35,50,45,.035);
+    }
+    .story-card p:last-child { margin-bottom: 0; }
+    .name-highlight {
+      color: #a4773c;
+      font-weight: 700;
+    }
+    .idea-box {
+      background: #eaf0eb;
+      border-radius: 8px;
+      padding: 25px 28px;
+      border: 1px solid #dce7df;
+    }
+    .idea-box p { margin: 0; font-weight: 600; }
+    footer {
+      background: var(--deep);
+      color: #c6d0c8;
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+    }
+    @media (max-width: 600px) {
+      .book { width: 100%; margin: 0; border-radius: 0; }
+      .cover { min-height: 540px; padding: 35px 8%; }
+      main { padding: 42px 7% 58px; }
+      h2 { font-size: 25px; }
+      .intro p, .story p, .idea p { font-size: 15px; text-align: right; }
+      .story-card, .idea-box { padding: 21px 19px; }
+    }
+    @media print {
+      body { background: white; }
+      .book { width: 100%; margin: 0; box-shadow: none; }
+      .cover { min-height: 100vh; break-after: page; }
+      main { padding: 20mm 18mm; }
+    }
+  </style>
+</head>
+<body>
+  <div class="book">
+    <header class="cover">
+      <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+      <div>
+        <div class="cover-mark">✦</div>
+        <h1>هدف‌گذاری در<br>سرزمین خرابه‌ها</h1>
+        <div class="cover-rule"></div>
+        <p class="subtitle">این کتاب قرار نیست زندگی تو را تغییر دهد؛<br>قرار است طرز فکر تو را دربارهٔ تغییر زندگی‌ات عوض کند.</p>
+      </div>
+      <div>
+        <div class="author">شکوهمند فضلی</div>
+        <div class="cover-note">کتابی دربارهٔ هدف‌گذاری در شرایط دشوار</div>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro">
+        <div class="section-kicker">پیش از آغاز</div>
+        <h2>مقدمه</h2>
+        <p>هیچ‌کس به تو نگفت که هدف‌گذاری در جایی که هر روز همه‌چیز عوض می‌شود، با هدف‌گذاری در جایی که فردا مثل امروز است، فرق دارد.</p>
+        <p>این کتاب همان چیزی است که کسی به نوید نگفت و شاید کسی به تو هم نگفته باشد.</p>
+        <p>این کتاب برای کسی نوشته شده که می‌خواهد شروع کند؛ نه با نسخه‌های آماده‌ای که برای سرزمین دیگری نوشته شده‌اند. برای کسی که پول کم دارد، وقت کم دارد، آینده‌اش روشن نیست، ولی هنوز می‌خواهد یک قدم بردارد.</p>
+        <p>این کتاب وعدهٔ موفقیت در ۳۰ روز را نمی‌دهد و فرمولی جادویی ندارد. فقط یک چیز دارد: روشی که با واقعیت زندگی تو جور باشد؛ کوتاه، علمی و بدون شعار.</p>
+        <div class="opening-quote">
+          گاهی انسان در سرزمینی زندگی می‌کند که رؤیاهایش بزرگ‌تر از امکاناتش هستند؛ جایی که آینده نامعلوم است، جیب‌ها خالی‌اند و مسیر رسیدن به آرزوها پر از مانع است.
+        </div>
+        <p>اما آیا نداشتن پول به معنای نداشتن آینده است؟</p>
+        <p>این کتاب داستان نوید است؛ انسانی که شاید امکانات زیادی نداشت، شاید کسی به رؤیاهایش باور نداشت و شاید حتی خودش هم گاهی از آینده می‌ترسید؛ اما چیزی داشت که هنوز از دست نداده بود.</p>
+        <p>هر فصل سه بخش دارد: یک داستان، یک ایدهٔ کلیدی و یک تمرین. تمرین‌ها را رد نکن؛ این کتاب تنها برای خواندن نیست، برای انجام دادن است.</p>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <section class="story">
+        <div class="section-kicker">فصل اول</div>
+        <h2>چرا نسخه‌های آماده برای تو کار نمی‌کنند؟</h2>
+        <div class="chapter-label">بخش اول · داستان</div>
+        <div class="story-card">
+          <p><span class="name-highlight">نوید</span> ۲۳ ساله بود و در کابل زندگی می‌کرد.</p>
+          <p>یک شب، در گوشی‌اش ویدیویی دید که در آن مردی خارجی می‌گفت: «اگر می‌خواهی موفق شوی، فقط یک هدف پنج‌ساله بنویس و آن را پیگیری کن.»</p>
+          <p>نوید از شدت هیجان، همان شب دفترچه‌ای خرید و نوشت: «تا پنج سال دیگر صاحب یک شرکت خواهم شد.»</p>
+          <p>سه ماه بعد، دفترچه زیر کتاب‌های درسی گم شده بود. نوید نه شرکتی داشت و نه حتی یک قدم به آن نزدیک شده بود.</p>
+          <p>نه به این دلیل که تنبل بود، نه به این دلیل که بی‌استعداد بود؛ بلکه چون هیچ‌کدام از آن دستورها برای زندگی او نوشته نشده بود.</p>
+          <p>آن ویدیو برای کسی ساخته شده بود که برق شبانه‌روزی دارد، اینترنت پایدار دارد، به خدمات بانکی دسترسی دارد و آینده‌اش دست‌کم تا پنج سال قابل پیش‌بینی است.</p>
+          <p>نوید واقعاً می‌خواست؛ اما برنامه‌ای که به او داده بودند، برای سرزمین دیگری بود.</p>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <section class="idea">
+        <div class="chapter-label">بخش دوم · ایدهٔ کلیدی</div>
+        <h2>یک حقیقت تلخ</h2>
+        <div class="idea-box">
+          <p>این کتاب با یک حقیقت تلخ شروع می‌شود: بیشتر روش‌های هدف‌گذاری که می‌شناسی، برای زندگی تو نوشته نشده‌اند.</p>
+        </div>
+      </section>
+    </main>
+    <footer>هدف‌گذاری در سرزمین خرابه‌ها <span aria-hidden="true"> · </span> شکوهمند فضلی</footer>
+  </div>
+</body>
+</html>
